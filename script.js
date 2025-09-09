@@ -1,35 +1,15 @@
-// Toggle mobile menu
-
+// Toggle Navbar Menu on Small Screens
 const menuToggle = document.getElementById("menu-toggle");
-
 const navLinks = document.getElementById("nav-links");
 
-menuToggle.addEventListener("click",()=>{ 
-
-navLinks.classList.toggle("show");
-
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
 });
 
-// Simple contact form validation
-
-const contactForm = document.getElementById("contact-form");
-
-const formStatus = document.getElementById("form-status");
-
-contactForm.addEventListener("submit", (e) => { e.preventDefault();
-
-const name = document.getElementById("name").value.trim();
-
-const email = document.getElementById("email").value.trim();
-
-const message = document.getElementById("message").value.trim();
-
-if(name && email && message){
-
-formStatus.textContent = "✓Message sent successfully!"; formStatus.style.color = "green"; contactForm.reset(); } 
-
-else {
-
-formStatus.textContent =" Please fill in all fields.";
-
-formStatus.style.colory = "red"; } });
+// Simple contact form alert (no backend yet)
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Thank you! Your message has been sent.");
+  form.reset();
+});
